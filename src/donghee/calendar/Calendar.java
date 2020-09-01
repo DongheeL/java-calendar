@@ -3,8 +3,14 @@ package donghee.calendar;
 import java.util.Scanner;
 
 public class Calendar {
-
-	public static void main(String[] args) {
+	
+	private final int[] MAX_DAYS = {31,28,31,30,31,30,31,31,30,31,30,31}; 
+	
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS[month-1];
+	}
+	
+	public void printSampleCalendar() {
 		
 		System.out.println(" SU MO TU WE TH FR SA");
 		System.out.println("---------------------");
@@ -14,15 +20,21 @@ public class Calendar {
 				System.out.println();
 			}
 		}
+	}
+	public static void main(String[] args) {
+		
 		
 		Scanner sc = new Scanner(System.in);
+		Calendar cal = new Calendar();
 		System.out.println("달을 입력하세요");
 		System.out.print("MONTH> ");
 		int month = sc.nextInt();
-		final int[] MAX_DAYS = {31,28,31,30,31,30,31,31,30,31,30,31};
-		System.out.printf("%d월은 %d일까지 있습니다.%n",month,MAX_DAYS[month-1]);
 		
+		System.out.printf("%d월은 %d일까지 있습니다.%n",month,cal.getMaxDaysOfMonth(month));
 		
+		cal.printSampleCalendar();
+		
+		sc.close();
 	}
 
 }

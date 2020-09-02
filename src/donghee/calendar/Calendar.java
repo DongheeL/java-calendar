@@ -23,16 +23,21 @@ public class Calendar {
 	}
 	public static void main(String[] args) {
 		
-		
 		Scanner sc = new Scanner(System.in);
 		Calendar cal = new Calendar();
-		System.out.println("달을 입력하세요");
-		System.out.print("MONTH> ");
-		int month = sc.nextInt();
 		
-		System.out.printf("%d월은 %d일까지 있습니다.%n",month,cal.getMaxDaysOfMonth(month));
+		System.out.println("숫자 입력");
+		int num = sc.nextInt();
 		
-		cal.printSampleCalendar();
+		for(int i=0;i<num;i++) {
+			System.out.println("달을 입력하세요");
+			System.out.print("MONTH> ");
+			int month = sc.nextInt();
+			
+			System.out.printf("%d월은 %d일까지 있습니다.%n",month,cal.getMaxDaysOfMonth(month));
+			
+		}
+		System.out.println("Bye~");
 		
 		sc.close();
 	}

@@ -27,13 +27,19 @@ public class Calendar {
 		Calendar cal = new Calendar();
 		
 		System.out.println("숫자 입력");
+		System.out.print("PROMPT> ");
 		int num = sc.nextInt();
 		
-		for(int i=0;i<num;i++) {
+		while(true) {
 			System.out.println("달을 입력하세요");
 			System.out.print("MONTH> ");
 			int month = sc.nextInt();
-			
+			if(month==-1) {
+				break;
+			}
+			if(month>12) {
+				continue;
+			}
 			System.out.printf("%d월은 %d일까지 있습니다.%n",month,cal.getMaxDaysOfMonth(month));
 			
 		}
